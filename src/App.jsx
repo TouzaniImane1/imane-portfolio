@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  SiPython, SiMysql, SiReact, SiPandas, 
-  SiFlask, SiTalend, SiQlik, SiGit, 
-  SiTailwindcss, SiNumpy 
-} from "react-icons/si";
+// On regroupe les imports pour plus de stabilité
+import * as Si from "react-icons/si";
+import * as Fa from "react-icons/fa";
 
 export default function App() {
   // CONFIGURATION DU CARROUSEL PROJET 3 (bi1.png à bi5.png)
@@ -17,7 +15,20 @@ export default function App() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const allSkills = [
+    { name: "Python", icon: <Si.SiPython className="text-[#3776AB]" /> },
+    { name: "Java", icon: <Fa.FaJava className="text-[#ED8B00]" /> },
+    { name: "C / C++", icon: <Si.SiCplusplus className="text-[#00599C]" /> },
+    { name: "SQL", icon: <Si.SiMysql className="text-[#4479A1]" /> },
+    { name: "React", icon: <Si.SiReact className="text-[#61DAFB]" /> },
+    { name: "Flask", icon: <Si.SiFlask className="text-white" /> },
+    { name: "Pandas", icon: <Si.SiPandas className="text-[#150458]" /> },
+    { name: "Talend", icon: <Si.SiTalend className="text-[#FF6D70]" /> },
+    { name: "Qlik", icon: <Si.SiQlik className="text-[#009845]" /> },
+    { name: "Git", icon: <Si.SiGit className="text-[#F05032]" /> },
+    { name: "Jira", icon: <Si.SiJira className="text-[#0052CC]" /> },
+    { name: "HTML/CSS", icon: <Si.SiHtml5 className="text-[#E34F26]" /> },
+  ];
   // Défilement automatique toutes les 4 secondes
   useEffect(() => {
     const timer = setInterval(() => {
@@ -82,7 +93,7 @@ export default function App() {
             <a href="https://www.linkedin.com/in/imane-touzani-535713220/" target="_blank" className="px-8 py-3 border border-white/20 bg-white/5 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm">
               LinkedIn
             </a>
-            <a href="/CV-ImaneTouzani.pdf" download className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:scale-105 transition-all">
+            <a href="/CV-ImaneTouzani.pdf.pdf" download className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:scale-105 transition-all">
               Download CV
             </a>
           </div>
@@ -161,38 +172,15 @@ export default function App() {
       </motion.section>
 
       {/* --- SKILLS --- */}
-      <section id="skills" className="py-32 bg-white/[0.02]">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.h2 {...scrollReveal} className="text-3xl font-bold mb-16 flex items-center gap-4 italic">
-            <span className="w-12 h-[2px] bg-purple-500"></span> Technical Arsenal
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {[
-              { name: "Python", icon: <SiPython className="text-[#3776AB]" /> },
-              { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
-              { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
-              { name: "Pandas", icon: <SiPandas className="text-[#150458]" /> },
-              { name: "Flask", icon: <SiFlask className="text-white" /> },
-              { name: "Talend", icon: <SiTalend className="text-[#FF6D70]" /> },
-              { name: "Qlik Sense", icon: <SiQlik className="text-[#009845]" /> },
-              { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
-              { name: "Tailwind", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-              { name: "NumPy", icon: <SiNumpy className="text-[#013243]" /> },
-            ].map((skill, index) => (
-              <motion.div 
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="group p-6 border border-white/5 rounded-2xl bg-white/[0.02] hover:border-purple-500/30 transition-all flex flex-col items-center"
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  {skill.icon}
-                </div>
-                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">{skill.name}</div>
-              </motion.div>
+      <section id="skills" className="py-20 bg-white/[0.02] px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-10 italic border-l-4 border-purple-500 pl-4">Technical Arsenal</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {allSkills.map((skill) => (
+              <div key={skill.name} className="p-6 bg-black border border-white/5 rounded-xl flex flex-col items-center hover:border-purple-500/50 transition-all">
+                <div className="text-3xl mb-3">{skill.icon}</div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">{skill.name}</span>
+              </div>
             ))}
           </div>
         </div>
