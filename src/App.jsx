@@ -76,7 +76,7 @@ export default function App() {
           className="z-10"
         >
           <div className="relative mb-12 mt-20 flex justify-center">
-            <img src="/me.jpeg" alt="Imane Touzani" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.5)]"/>
+            <img src="/me.jpg" alt="Imane Touzani" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.5)]"/>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter italic">
@@ -93,7 +93,7 @@ export default function App() {
             <a href="https://www.linkedin.com/in/imane-touzani-535713220/" target="_blank" className="px-8 py-3 border border-white/20 bg-white/5 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm">
               LinkedIn
             </a>
-            <a href="/CV-ImaneTouzani.pdf.pdf" download className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:scale-105 transition-all">
+            <a href="/CV-ImaneTouzani.pdf" download className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:scale-105 transition-all">
               Download CV
             </a>
           </div>
@@ -195,7 +195,7 @@ export default function App() {
           {/* Project 1 */}
           <motion.div {...scrollReveal} className="group rounded-3xl border border-white/10 bg-white/5 overflow-hidden flex flex-col h-full shadow-lg">
             <div className="h-48 overflow-hidden bg-gray-900">
-              <img src="/voice.jpeg" alt="Voice AI" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
+              <img src="/voice.jpg" alt="Voice AI" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
             </div>
             <div className="p-8 flex flex-col flex-grow">
               <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">AI & Accessibility</span>
@@ -208,7 +208,7 @@ export default function App() {
           {/* Project 2 */}
           <motion.div {...scrollReveal} transition={{ delay: 0.2 }} className="group rounded-3xl border border-white/10 bg-white/5 overflow-hidden flex flex-col h-full shadow-lg">
             <div className="h-48 overflow-hidden bg-gray-900">
-              <img src="/airport.jpeg" alt="Airport App" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
+              <img src="/airport.jpg" alt="Airport App" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" />
             </div>
             <div className="p-8 flex flex-col flex-grow">
               <span className="text-xs font-bold text-pink-400 uppercase tracking-widest">Mobile Development</span>
